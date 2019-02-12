@@ -1,0 +1,220 @@
+<div  class="email-compact-container">
+  <!-- compose new message starts -->
+
+  <div class="new-mail">
+  <div class="card">
+          
+          <div class="card-body">
+             
+              <div *ngIf="isShowHtmlTextEditor" class="card-footer text-muted cus-card-footer" >
+                  <div class="formatting-options" style="display:flex">
+                    <a class="font-family formatting-option" [style.font-family]="selectedFont">
+                      {{selectedFont}}
+                      <!--<i class="material-icons">font_download</i>-->
+                            <div class="font-list">
+                                <a class="font-item" *ngFor="let fonts of fontList" [style.font-family]='fonts.style' (click)="changeFont(fonts.font)">{{fonts.font}}</a>
+                            </div>
+                    </a>
+                    <a class="font-size formatting-option">
+                      {{selectedFontSize}}
+                      <!--<i class="material-icons">format_size</i>-->
+                            <div class="font-size-list">
+                                    <a class="font-item" *ngFor="let fonts of fontSizes" (click)="changeFontSize(fonts)">{{fonts}}</a>
+                            </div>
+                    </a>
+                    <a title="Bold" class="formatting-option" [ngClass]="{'formatting-option active': formatBold}" (click)="makeStyle('bold')"><i class="material-icons">format_bold</i></a>
+                    <a title="Italic" class="formatting-option" (click)="makeStyle('italic')"><i class="material-icons">format_italic</i></a>
+                    <a title="Underline" class="formatting-option" (click)="makeStyle('underline')"><i class="material-icons">format_underlined</i></a>
+                    <a title="Strikethrough" class="formatting-option" (click)="makeStyle('strikeThrough')"><i class="material-icons">format_strikethrough</i></a>
+                    <div class="fore-wrapper formatting-option" [class.open]="showColorPicker" (click)="showColorPickerFn()" title="Text Color" [style.color]="selectedForeColor">
+                      <i class="material-icons">format_color_text</i>
+                        <div class="fore-palette colors-palette" *ngIf="showColorPicker">
+                          <div class="automaic-palette-item">
+                              <a (click)="makeColor('forecolor','black')" title="black" style="background-color: black;"></a>
+                               <label>Automatic</label>
+                            </div>
+                            <label class="cus-label">Theme Colors</label>
+                            <div class="opt-palette-item margin-bottom-5">
+                                    <a *ngFor="let colors of color1" (click)="makeColor('forecolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color2" (click)="makeColor('forecolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color3" (click)="makeColor('forecolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color4" (click)="makeColor('forecolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color5" (click)="makeColor('forecolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color6" (click)="makeColor('forecolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <label class="cus-label">Standard Colors</label>
+                            <div class="opt-palette-item">
+                                    <a *ngFor="let colors of color7" (click)="makeColor('forecolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back-wrapper formatting-option" [class.open]="showColorPickerBack" (click)="showColorPickerBackFn()" title="Background Color" [style.color]="selectedBackColor">
+                      <i class="material-icons">format_color_fill</i>
+                        <div class="back-palette colors-palette" *ngIf="showColorPickerBack">
+                            <div class="automaic-palette-item">
+                              <a (click)="makeColor('backcolor','black')" title="black" style="background-color: black;"></a>
+                               <label>Automatic</label>
+                            </div>
+                            <label class="cus-label">Theme Colors</label>
+                            <div class="opt-palette-item margin-bottom-5">
+                                    <a *ngFor="let colors of color1" (click)="makeColor('backcolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color2" (click)="makeColor('backcolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color3" (click)="makeColor('backcolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color4" (click)="makeColor('backcolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color5" (click)="makeColor('backcolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <div class="opt-palette-item themecolors">
+                                    <a *ngFor="let colors of color6" (click)="makeColor('backcolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                            <label class="cus-label">Standard Colors</label>
+                            <div class="opt-palette-item">
+                                    <a *ngFor="let colors of color7" (click)="makeColor('backcolor',colors.color)" title={{colors.title}}  [style.background-color]='colors.color'></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a title="Bullet List" *ngIf="moreMenuCount < 8"  class="formatting-option" (click)="makeStyle('insertUnorderedList')"><i class="material-icons">format_list_bulleted</i></a>
+                    <a title="Number List" *ngIf="moreMenuCount < 7" class="formatting-option" (click)="makeStyle('insertOrderedList')"><i class="material-icons">format_list_numbered</i></a>
+                    <a title="Align Left" *ngIf="moreMenuCount < 6" class="formatting-option" (click)="makeStyle('justifyLeft')"><i class="material-icons">format_align_left</i></a>
+                    <a title="Align Center" *ngIf="moreMenuCount < 5" class="formatting-option" (click)="makeStyle('justifyCenter')"><i class="material-icons">format_align_center</i></a>
+                    <a title="Align Right" *ngIf="moreMenuCount < 4" class="formatting-option" (click)="makeStyle('justifyRight')"><i class="material-icons">format_align_right</i></a>
+                    <a title="Increase Indent" *ngIf="moreMenuCount < 3" class="formatting-option" (click)="makeStyle('indent')"><i class="material-icons">format_indent_increase</i></a>
+                    <a title="Decrease Indent" *ngIf="moreMenuCount < 2" class="formatting-option" (click)="makeStyle('outdent')"><i class="material-icons">format_indent_decrease</i></a>
+                   
+                    <a title="Insert Image" *ngIf="moreMenuCount < 1" class="formatting-option" (click)="makeStyle('insertimage')"><i class="material-icons">insert_photo</i></a>
+                    <a class="attach-file" (click)='attachDocFromPanelTwo()' title="Attach Document From History">
+                        <i class="fa fa-file" aria-hidden="true"></i>
+                    </a>
+                    <a class="attach-file" title="Attach Files">
+
+                      <label for="file-upload">
+                          <i class="material-icons">attach_file</i>
+                      </label>
+                      <input id="file-upload" type="file" multiple (change)="onSelectFile($event)" />
+                  </a>
+                    <div class="dropdown drop-menu" *ngIf="moreMenuCount > 0">
+                      <button class="btn btn-info dropdown-toggle" type="button" (click)="showToggelebar()" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><i class="fa fa-ellipsis-h"></i></button>
+                      <ul (mouseleave)="isShowMenu=false" [style.display]="isShowMenu?'block':'none'" class="dropdown-menu cus-dropdown-menu">
+                        <li [hidden]="moreMenuCount < 8">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('insertUnorderedList')">
+                          <i class="material-icons">format_list_bulleted</i>
+                          <span>Bullet List</span>
+                          </a>
+                        </li>
+                        <li [hidden]="moreMenuCount < 7">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('insertOrderedList')">
+                          <i class="material-icons">format_list_numbered</i>
+                          <span>Number List</span>
+                          </a>
+                        </li>
+                        <li [hidden]="moreMenuCount < 6">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('justifyLeft')">
+                          <i class="material-icons">format_align_left</i>
+                          <span>Align Left</span>
+                          </a>
+                        </li>
+                        <li [hidden]="moreMenuCount < 5">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('justifyCenter')">
+                          <i class="material-icons">format_align_center</i>
+                          <span>Align Center</span>
+                          </a>
+                        </li>
+                        <li [hidden]="moreMenuCount < 4">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('justifyRight')">
+                          <i class="material-icons">format_align_right</i>
+                          <span>Align Right</span>
+                          </a>
+                        </li>
+                        <li [hidden]="moreMenuCount < 3">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('indent')">
+                          <i class="material-icons">format_indent_increase</i>
+                          <span>Increase Indent</span>
+                          </a>
+                        </li>
+                        <li [hidden]="moreMenuCount < 2">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('outdent')">
+                          <i class="material-icons">format_indent_decrease</i>
+                          <span>Decrease Indent</span>
+                          </a>
+                        </li>
+                        <li [hidden]="moreMenuCount < 1">
+                          <a class="dropdown-item" href="javascript:void(0)" (click)="makeStyle('insertimage')">
+                          <i class="material-icons">insert_photo</i>
+                          <span>Insert Image</span>
+                          </a>
+                        </li>
+                        
+                        <li>
+                          <a class="attach-file" title="Attach Document From History">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                        </a>
+                        </li>
+                        <li>
+                          <a class="attach-file" title="Attach Files">
+                            <label for="file-upload">
+                                <i class="material-icons">attach_file</i>
+                            </label>
+                            <input id="file-upload"  type="file" multiple (change)="onSelectFile($event)" />
+                        </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              <div  *ngIf="isShowTextEditorBody" class="body" >
+                  <div class="form-control" spellcheck="false" id="emailBody" 
+                  [innerHTML]="data" (blur)="getEmailBody($event)" 
+                  [attr.contenteditable]="isShowHtmlTextEditor" 
+                  (mouseup)="onMouseUp($event)"[mention]="autoSearchValues" 
+                  [mentionConfig]="{triggerChar:'{',labelKey:formatValue,searchKeys:searchKeys,mentionSelect:format}" >
+                  </div>
+                  <!-- (mousemove)="onMouseMove($event)"
+                  (mousedown)="onMouseDown($event)"
+                  (click)="onClick($event)" -->
+              </div>
+                  <ul  *ngIf="attachments.length > 0&&attachments!==undefined" class="attachment-list">
+                      <li *ngFor="let attachmentToBeSent of attachments; let i=index">
+                          <a (click)="previewAttachment(attachmentToBeSent)">
+                            <span><img src="../../../../assets/images/{{attachmentToBeSent.icon}}.svg" alt="{{attachmentToBeSent.icon}}" draggable="false" width="24" height="24"></span> &nbsp;
+                            {{attachmentToBeSent.filename}}
+                          </a>
+                          <span *ngIf="isShowHtmlTextEditor" class="attachment-action"><i class="fa fa-times" (click)="removeFromAttachment(i)"></i></span>
+                      </li>
+                  </ul>
+            
+          </div>
+          <div id="menu">
+              <li id="bold"></li>
+              <li id="italic"></li>
+              <li id="underline"></li>
+              <li id="blockquote"></li>
+              <li id="link"></li>
+              <li id="sub"></li>
+              <li id="sup"></li>
+              <li id="del"></li>
+            </div>
+  </div>
+  </div>
+
+  <!-- compose new message ends -->
+
+</div>

@@ -1,0 +1,272 @@
+.email-compact-container {
+    margin-right: 0;
+    // height: calc(100vh - 291px);
+    height: 100%;
+    overflow: hidden;
+
+    .new-mail {
+
+        .card {
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+
+            .card-body {
+                flex: 1;
+                
+                .body {
+                    position: relative;
+                    overflow: auto;
+                }
+            }
+        }
+    }
+}
+
+
+
+// .attachment-list {
+//     padding: 10px;
+//     list-style-type: none;
+//     display: flex;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     margin: 0;
+//     background: #f7f7f7;
+//     border-top: 1px solid #eee;
+// }
+// .attachment-list li {
+//     position: relative;
+//     padding: 10px;
+//     padding-left: 20px;
+//     padding-right: 40px;
+//     background: #eaeaea;
+//     margin: 0 5px;
+//     cursor: pointer;
+//     flex: 0.2;
+//     overflow: hidden;
+//     margin-bottom: 5px;
+//     transition: all 0.3s ease-in-out;
+// }
+// .attachment-list li:before {
+//     display: block;
+//     position: absolute;
+//     top: 50%;
+//     left: 2px;
+//     font-family: FontAwesome;
+//     content: "\F0C6";
+//     font-size: 20px;
+//     transform: translateY(-50%) rotate(45deg);
+// }
+// .attachment-list li a {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     overflow: hidden;
+// }
+// .attachment-list li a span {
+//     font-size: 1.4rem;
+//     color: #113a65;
+// }
+// .attachment-list li .attachment-action{
+//     display: inline-block;
+//     height: 100%;
+//     line-height: 41px;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     padding: 0 5px;
+// }
+// .attachment-list li:hover {
+//     background: #e6e6e6;
+// }
+// .attachment-action:hover, .attachment-action.active {
+//     background: #dcdcdc;
+// }
+// .attachment-list li .attachment-action-list {
+//     display: none;
+//     position: absolute;
+//     right: 0px;
+//     top: 52px;
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     border-radius: 0 0 2px 2px;
+//     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+
+//     li {
+//         padding: 0;
+//         margin: 0;
+//         background: none;
+
+//         a {
+//             font-size: 13px;
+//             padding: 5px 15px;
+//             color: #777;
+//             background: #f3f3f3;
+//             transition: all 0.3s ease-in-out;
+
+//             &:hover {
+//                 text-decoration: none;
+//                 background: #dcdcdc;
+//             }
+//         }
+//     }
+// }
+// .email-content-wrapper .attachment-list li:before {
+//     display: none;
+// }
+
+/* .attachment-list {
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 50px;
+}
+.attachment-list li {
+    position: relative;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 40px;
+    background: #f3f3f3;
+    margin: 0 5px;
+    cursor: pointer;
+    max-width: 50%;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.attachment-list li:before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    font-family: FontAwesome;
+    content: "\F0C6";
+    font-size: 20px;
+    transform: translateY(-50%) rotate(45deg);
+}
+.attachment-list li a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.attachment-list li a span {
+    font-size: 1.4rem;
+    color: #113a65;
+}
+.attachment-list li .attachment-action{
+    display: inline-block;
+    height: 100%;
+    line-height: 31px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 5px;
+}
+.attachment-list li:hover {
+    background: #ececec;
+}
+.attachment-action:hover, .attachment-action.active {
+    background: #dcdcdc;
+}
+.attachment-list li .attachment-action-list {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 52px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+
+    li {
+        padding: 0;
+        margin: 0;
+        background: none;
+
+        a {
+            font-size: 13px;
+            padding: 5px 15px;
+            color: #777;
+            background: #f3f3f3;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                text-decoration: none;
+                background: #dcdcdc;
+            }
+        }
+    }
+} */
+.email-content-wrapper .attachment-list li:before {
+    display: none;
+}
+ .attach-file {
+    input[type="file"] {
+        display: none;
+    }
+    label {
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+#menu {
+    width: 112px;
+    padding:5px;
+    background:#F5F5F5;
+    display:none;
+    position:absolute;
+    top:0px;
+    left:0px;
+    overflow:hidden;
+    border:solid 1px #929292;
+    border-radius:5px;
+      li {
+        padding:3px 5px;
+        border:solid 1px transparent;
+        float:left;
+        display:block;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+          &:hover {
+          border:solid 1px #BEA881;
+          background-color:#FFF2CB;
+          border-radius:5px;
+        }
+    }
+  }
+
+  #bold {
+    background: url(http://img2.uploadhouse.com/fileuploads/17491/17491541ef7f7666be6a203fd971396f987eb752.png) no-repeat center center;
+  }
+  #italic {
+    background: url(http://img3.uploadhouse.com/fileuploads/17491/174915395ab347e382d8f68bb33dade17518e68a.png) no-repeat center center;
+  }
+  #underline {
+    background: url(http://img3.uploadhouse.com/fileuploads/17491/174915354990c5dad9c4626eb63650e78ba252ad.png) no-repeat center center;
+  }
+  #blockquote {
+    background: url(http://img5.uploadhouse.com/fileuploads/17491/17491542c5456098c95e20178ec3a822d71ff91d.png) no-repeat center center;
+  }
+  #link {
+   background: url(http://img2.uploadhouse.com/fileuploads/17491/17491540f157fa1b061a4b9afda62d243ed3f029.png) no-repeat center center;
+  }
+  #sub {
+    background: url(http://img1.uploadhouse.com/fileuploads/17491/174915370bbc8a25df744f4573a3340c8f232aa1.png) no-repeat center center;
+  }
+  #sup {
+    background: url(http://img9.uploadhouse.com/fileuploads/17491/174915369217c1dfbef6a3aa88a0a122726b28d5.png) no-repeat center center;
+  }
+  #del {
+    background: url(http://img4.uploadhouse.com/fileuploads/17491/17491538c153871b868e0e5280d6c7fffe828233.png) no-repeat center center;
+  }
